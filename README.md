@@ -22,35 +22,57 @@ Auto-detects your username and hostname. Imports hardware config from `/etc/nixo
 - KDE Plasma 6 on Wayland (SDDM)
 - Smart Video Wallpaper Reborn (desktop + lock screen)
 - Plasma-Manager for declarative KDE config
-- Starship prompt, zoxide, direnv, fzf
+- Noto Sans, Noto Emoji, JetBrains Mono fonts
 
 ### Dev Tools
-- Rust (rustc, cargo, cargo-binstall, rust-analyzer)
-- Python (python3, pip, virtualenv, uv)
-- Node.js (nodejs, pnpm, typescript)
-- Deno, Go (gopls), Java (JDK, Maven, Gradle)
-- C/C++ (gcc, cmake, mold, ccache, sccache)
+- Rust: rustc, cargo, cargo-binstall, rust-analyzer
+- Python: python3, pip, virtualenv, uv
+- Node.js: nodejs, pnpm, typescript, typescript-language-server
+- Deno
+- Go: go, gopls
+- Java: JDK, Maven, Gradle
+- C/C++: gcc, gnumake, cmake, pkg-config, openssl
+- Build caching: ccache, mold, sccache
+- Nix dev: nil, nixd
 
 ### CLI Tools
-- ripgrep, fd, bat, eza, fzf, zoxide
-- btop, dust, lazygit, just, tldr, tmux
-- git, curl, wget, rsync, jq, yq, strace
+- Search: ripgrep, fd, fzf, zoxide
+- File viewers: bat, eza
+- System: btop, dust, tree, lsof, strace
+- Git: git, lazygit
+- Task runner: just, tldr
+- Network: xh, wget, curl, rsync
+- Archive: unzip, p7zip
+- Data: jq, yq, watchexec, sqlite, file
+- Nix: opencode, nix-output-monitor, nix-tree, comma
+- Shell: starship, direnv, tmux, fastfetch
 
 ### System
-- Btrfs with zstd compression + auto-scrub + dedup
-- Memory tuning (swappiness=100, zswap zstd)
-- AI workload cgroup isolation
-- Fail2ban, earlyoom, DNS-over-TLS
+- Btrfs with zstd compression + auto-scrub + weekly dedup
+- Memory tuning (swappiness=100, zswap zstd, zram 50%)
+- AI workload cgroup isolation (80% RAM)
+- Firewall + fail2ban + earlyoom
+- DNS-over-TLS (Cloudflare + Quad9)
 - Bootloader: 2 generations, editor enabled
+- Garbage collection: weekly, keep 14 days
 
 ### Hardware
-- TP-Link TX50UH WiFi (RTL8832CU usb_modeswitch)
+- TP-Link TX50UH WiFi (RTL8832CU usb_modeswitch udev rule)
 - Bluetooth + Blueman
 - AMD microcode
-- PipeWire audio
+- PipeWire audio (PulseAudio + JACK compat)
+- Printing (CUPS)
+- Playerctl (media keys)
 
 ### Containers
 - Podman (docker compat, rootless)
+- dive, podman-tui, docker-compose
+
+### Networking
+- NetworkManager
+- OpenVPN plugin
+- OpenSSH server
+- Avahi (mDNS)
 
 ## Structure
 
