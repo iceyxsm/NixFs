@@ -4,6 +4,15 @@
   programs.plasma = {
     enable = true;
 
+    # Dark theme
+    workspace = {
+      theme = "breeze-dark";
+      colorScheme = "BreezeDark";
+      iconTheme = "breeze-dark";
+      cursorTheme = "breeze-cursor";
+      cursor.size = 24;
+    };
+
     input.keyboard = {
       numlockOnStartup = "on";
     };
