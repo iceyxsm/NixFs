@@ -68,6 +68,18 @@ else
     echo "[4/4] No videos found, skipping wallpaper setup."
 fi
 
+# 5. Verify CLI tools
+echo ""
+echo "Verifying CLI tools..."
+for cmd in opencode kiro; do
+    if command -v "$cmd" &>/dev/null; then
+        echo "  $cmd: installed"
+    else
+        echo "  $cmd: not found (installing via nix profile)..."
+        nix profile install nixpkgs#${cmd} 2>/dev/null || echo "    Failed to install $cmd"
+    fi
+done
+
 echo ""
 echo "=== Setup Complete ==="
 echo "Wallpapers: $WALLPAPER_DIR"

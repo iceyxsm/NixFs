@@ -42,6 +42,7 @@
     lsof
     strace
     opencode
+    kiro-cli
     nix-output-monitor
     nix-tree
     comma
