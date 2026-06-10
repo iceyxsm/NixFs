@@ -21,16 +21,16 @@ Auto-detects your username and hostname. Imports hardware config from `/etc/nixo
 ### Desktop
 - KDE Plasma 6 on Wayland (SDDM)
 - Smart Video Wallpaper Reborn (desktop + lock screen)
-- Plasma-Manager for declarative KDE config
-- Noto Sans, Noto Emoji, JetBrains Mono fonts
+- Plasma-Manager (panels, fonts, effects, Super+Enter keybind)
+- Fonts: noto-fonts, noto-fonts-emoji, jetbrains-mono
 
 ### Dev Tools
 - Rust: rustc, cargo, cargo-binstall, rust-analyzer
 - Python: python3, pip, virtualenv, uv
 - Node.js: nodejs, pnpm, typescript, typescript-language-server
-- Deno
+- Deno: deno
 - Go: go, gopls
-- Java: JDK, Maven, Gradle
+- Java: jdk, maven, gradle
 - C/C++: gcc, gnumake, cmake, pkg-config, openssl
 - Build caching: ccache, mold, sccache
 - Nix dev: nil, nixd
@@ -38,7 +38,7 @@ Auto-detects your username and hostname. Imports hardware config from `/etc/nixo
 ### CLI Tools
 - Search: ripgrep, fd, fzf, zoxide
 - File viewers: bat, eza
-- System: btop, dust, tree, lsof, strace
+- System: btop, dust, tree, lsof, strace, neovim
 - Git: git, lazygit
 - Task runner: just, tldr
 - Network: xh, wget, curl, rsync
@@ -46,21 +46,25 @@ Auto-detects your username and hostname. Imports hardware config from `/etc/nixo
 - Data: jq, yq, watchexec, sqlite, file
 - Nix: opencode, nix-output-monitor, nix-tree, comma
 - Shell: starship, direnv, tmux, fastfetch
+- KDE: kate, playerctl, wayland-utils, wl-clipboard, breeze
 
 ### System
-- Btrfs with zstd compression + auto-scrub + weekly dedup
-- Memory tuning (swappiness=100, zswap zstd, zram 50%)
-- AI workload cgroup isolation (80% RAM)
-- Firewall + fail2ban + earlyoom
-- DNS-over-TLS (Cloudflare + Quad9)
-- Bootloader: 2 generations, editor enabled
+- Btrfs with zstd compression + auto-scrub + weekly dedup (duperemove, compsize)
+- Memory: swappiness=100, zswap (zstd, zsmalloc, 50%), zram (50%, zstd)
+- AI workload cgroup (80% RAM)
 - Garbage collection: weekly, keep 14 days
+
+### Security
+- Firewall (port 22 open)
+- Fail2ban (5 retries, 24h ban, increment to 168h)
+- Earlyoom (5% mem/swap threshold)
+- DNS-over-TLS (Cloudflare + Quad9)
 
 ### Hardware
 - TP-Link TX50UH WiFi (RTL8832CU usb_modeswitch udev rule)
 - Bluetooth + Blueman
 - AMD microcode
-- PipeWire audio (PulseAudio + JACK compat)
+- PipeWire audio (ALSA, PulseAudio, JACK)
 - Printing (CUPS)
 - Playerctl (media keys)
 
@@ -69,10 +73,13 @@ Auto-detects your username and hostname. Imports hardware config from `/etc/nixo
 - dive, podman-tui, docker-compose
 
 ### Networking
-- NetworkManager
-- OpenVPN plugin
+- NetworkManager + OpenVPN plugin
 - OpenSSH server
 - Avahi (mDNS)
+
+### Boot
+- systemd-boot: 2 generations, editor enabled
+- Btrfs supported filesystems
 
 ## Structure
 
